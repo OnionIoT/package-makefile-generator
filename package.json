@@ -1,0 +1,27 @@
+{
+  "name": "package-makefile-generator",
+  "version": "1.0.0",
+  "description": "Generator to help create OpenWRT package makefiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnionIoT/package-makefile-generator.git"
+  },
+  "keywords": [
+    "openwrt",
+    "generator"
+  ],
+  "author": "lazar@onion.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OnionIoT/package-makefile-generator/issues"
+  },
+  "homepage": "https://github.com/OnionIoT/package-makefile-generator#readme",
+  "dependencies": {
+    "handlebars": "^4.1.0",
+    "yargs": "^13.2.1"
+  }
+}

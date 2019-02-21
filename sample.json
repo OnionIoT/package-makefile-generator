@@ -1,0 +1,6 @@
+{
+  "name": "sample-package",
+  "repo": "https://github.com/OnionIoT/Onion-Docs.git",
+  "submenu": "example",
+  "description": "sample package"
+}
