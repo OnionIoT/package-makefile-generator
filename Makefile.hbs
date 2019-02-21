@@ -26,7 +26,9 @@ define Package/{{name}}
 	CATEGORY:=Onion
 	SUBMENU:={{submenu}}
 	TITLE:={{description}}
-	DEPENDS:=+libonioni2c +libmosquitto
+{{#if dependencies}}
+	DEPENDS:={{dependencies}}
+{{/if}}
 endef
 
 
@@ -35,15 +37,10 @@ define Package/{{name}}/description
 endef
 
 define Package/{{name}}/install
-	$(INSTALL_DIR) $(1)/www/apps/oos-app-sparkfun-qwiic $(1)/usr/bin $(1)/etc/init.d
-	# copy the web site files
-	$(CP) -r $(PKG_BUILD_DIR)/omega/www/* $(1)/www/apps/oos-app-sparkfun-qwiic/
-	# install the program
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/omega/src/sparkfun-qwiic $(1)/usr/bin/
-	# install the init.d scripts
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/omega/init.d/oos-qwiic-amg8833 $(1)/etc/init.d/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/omega/init.d/oos-qwiic-env $(1)/etc/init.d/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/omega/init.d/oos-qwiic-vl53l1x $(1)/etc/init.d/
+{{#each files}}
+  $(INSTALL_DIR) $(1){{this.destination.directory}}
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/{{this.source}} $(1){{this.destination.directory}}/{{this.destination.filename}}
+{{/each}}
 endef
 
 

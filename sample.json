@@ -2,5 +2,22 @@
   "name": "sample-package",
   "repo": "https://github.com/OnionIoT/Onion-Docs.git",
   "submenu": "example",
-  "description": "sample package"
+  "description": "sample package",
+  "dependencies": "+onion-os +python-spidev",
+  "files": [
+    {
+      "source": "sample/run.sh",
+      "destination": {
+        "directory": "/usr/bin",
+        "filename": "run"
+      }
+    },
+    {
+      "source": "init.d/sample.sh",
+      "destination": {
+        "directory": "/etc/init.d",
+        "filename": "sample"
+      }
+    }
+  ]
 }
