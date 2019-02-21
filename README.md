@@ -10,7 +10,14 @@ This is a Node.JS project, run `npm install` to setup the required modules.
 The generator uses the `Makefile.hbs` template and an input json file to create an OpenWRT package makefile.
 
 See the included `sample.json` file for an example of what data is required. 
-*Note that `dependencies` is the only key-value pair that is optional.*
+
+### Optional Key-Value Pairs
+
+* `dependencies`
+  * No dependencies will be specified
+* `repo`
+  * If repo is specified, package will be built from that repo
+  * If not, the `files` directory will be set as the Package Build Directory, `PKG_BUILD_DIR`
 
 ## Running the Generator
 
