@@ -1,0 +1,8 @@
+{
+  "name": "omega2-base",
+  "repo": "https://github.com/OnionIoT/Onion-Docs.git",
+  "submenu": "Onion",
+  "description": "Omega2 base depeendencies",
+  "dependencies": "+blockd +i2c-tools",
+  "files": []
+}
